@@ -7,8 +7,8 @@ var first;
 var addedValue;
 var plusCounter = 0;
 var minusCounter = 0;
-var divideCounter;
-var multiplyCounter;
+var divideCounter = 0;
+var multiplyCounter = 0;
 /*
 var increment = function(){
     return function(counter){
@@ -54,15 +54,23 @@ equal.addEventListener("click", () => {
 
     console.log("is equals working");
     console.log(secondDisplayValue);
-    if (plusCounter = 1){
+    if (plusCounter == 1){
    addedValue = sum(displayValue,secondDisplayValue);
    inputDisplay.innerText = addedValue;
    --plusCounter;
-    } else if (minusCounter = 1){
+    } else if (minusCounter == 1){
         subtractedValue = subtract(displayValue,secondDisplayValue);
         inputDisplay.innerText = subtractedValue;
         --minusCounter;
-    }
+    } else if (multiplyCounter == 1){
+         multipliedValue = multiply(displayValue,secondDisplayValue);
+        inputDisplay.innerText = multipliedValue;
+        --multiplyCounter;
+    } else if (divideCounter == 1){
+        dividedValue = divide(displayValue,secondDisplayValue);
+       inputDisplay.innerText = dividedValue;
+       --divideCounter;
+   }
 });
 
 var plus = document.getElementById("plus");
@@ -76,11 +84,28 @@ plus.addEventListener("click", () =>{
 });
 
 
-var plus = document.getElementById("minus");
-plus.addEventListener("click", () =>{
+var minus = document.getElementById("minus");
+minus.addEventListener("click", () =>{
     inputDisplay.innerText = secondDisplayValue;
     ++counter;
     ++minusCounter;
+    console.log(`This is the value of ${counter}`);
+});
+
+
+var multiplyButton = document.getElementById("multiply");
+multiplyButton.addEventListener("click", () =>{
+    inputDisplay.innerText = secondDisplayValue;
+    ++counter;
+    ++multiplyCounter;
+    console.log(`This is the value of ${counter}`);
+});
+
+var divideButton = document.getElementById("divide");
+divideButton.addEventListener("click", () =>{
+    inputDisplay.innerText = secondDisplayValue;
+    ++counter;
+    ++divideCounter;
     console.log(`This is the value of ${counter}`);
 });
 
